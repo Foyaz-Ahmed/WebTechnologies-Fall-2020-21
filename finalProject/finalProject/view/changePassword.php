@@ -1,14 +1,13 @@
 <?php
-session_start();
-include('../control/dashboardcheck.php');
-//include('../control/registeValidation.php');
-//include('../control/officeJournalistValidation.php');
-include('../control/editProfileValidation.php');
-include('../control/editProfileCheck.php');
+include('../control/changePasswordValidation.php');
+include('../control/changePasswordCheck.php');
 
+//include('../control/dashboardCheck.php');
 
 
 ?>
+
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
@@ -16,9 +15,9 @@ include('../control/editProfileCheck.php');
 		<title>News Portal Management System</title>
 	</head>
 	<body>
-	<center>
 		<div>
-		  <form action="" method="post">
+		<center>
+		<form method="post" action="">
 			<table border="1">	
 					</tr>
 						<td colspan ="2" width ="100%" height="50px" align="center"><h1>Welcome to Your Profile</h1></td>
@@ -46,52 +45,44 @@ include('../control/editProfileCheck.php');
 						</td>
 						<td width ="1200px" height ="700px">
 							<fieldset>	
-								<legend><h5>Edit Profile</h5></legend>
+								<legend><h5>Change Password</h5></legend>
 								<table align="center">
 									<tr>
-										<td>Name:</td>
+										<td>Current Password:</td>
+										<td><input type ="text" name = "pass" method ="post"></td>
 										<td></td>
-										<td><input type ="text" name = "mname" method ="post" value="<?php if(isset($row['name']))
-										{echo $row['name'];}?>"></td>
-										<td><?php echo $nameError;?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
-										<td>Email:</td>
+										<td>New Password:</td>
+										<td><input type ="password" name ="cpass" method =""></td>
+										<td><td>
 										<td></td>
-										<td><input type ="email" name ="memail" method ="post"  value="<?php echo $row['email'];?>"><button title ="hints:sample@com"><b>i</b></button></td>
-										<td><?php echo $emailErr;?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
-										<td>Address:</td>
-										<td></td>
-										<td><input type ="text" name="address" method ="post"  value="<?php echo $row['address'];?>"></td>
-										<td><?php echo $addressError;?></td>
+										<td>Re-type New Passwprd:</td>
+										<td><input type="password" name="rpass" /></td>
+										<td><td>
 									</tr>
-									<tr><td colspan="4"><hr></td></tr>
 									<tr>
-										<td>Phone Number:</td>
-										<td></td>
-										<td><input type="tel" name="mphone" method ="post"  value="<?php echo $row['phone'];?>"></td>
-										<td><?php echo $noError;?></td>
-										<td><?php echo $numberrError;?></td>
+										<td colspan="3"><hr></td>
+									</tr>
+										<td><?php
+										if(isset($message)){
+										echo "<b>$message<b>";
+										echo "<b>$error</b>";
+										echo "<b>$passError</b>";
+										}
+										?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
-										<td>Date Of Birth:</td>
-										<td></td>
-										<td><input type ="date" name ="date" method ="post"  value="<?php echo $row['dob'];?>"></td>
-										<td><?php echo $dobError;?></td>
-									</tr>
-									<tr><td colspan="3"><hr></td></tr>
 									<tr>
-										<td><input type ="submit" value ="Update" name="submit"></td>
-										<td></td>
-										<td><input type ="reset"  value ="Reset"></td>
-										<td><b><?php echo $Error;?><b></td>
-									</tr>
-									
+											<td></td>
+											<td><input type ="submit" value ="submit" name="submit"></td>
+											<td></td>
+										</tr>
 								</table>
 							</fieldset>
 						</td>
@@ -100,8 +91,8 @@ include('../control/editProfileCheck.php');
 						<td colspan="2" align="center"><h4>Copyright from @glaxoserfr4.com<h4></td>
 					</tr>
 			</table>
-		</form>	
+			</center>
+	<form>	
 		</div>
-	 </center>
 	</body>
 </html>
