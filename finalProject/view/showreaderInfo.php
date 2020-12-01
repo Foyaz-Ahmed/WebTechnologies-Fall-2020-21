@@ -1,74 +1,68 @@
 <?php
-include('findReaderInfo.php');
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
-$name ="";
-
-$userId;
+include ('../control/db.php');
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$connection = new db();
+$conobj=$connection->OpenCon();
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT userId, name, email,gender, phone,bloodGroup,dob FROM readerregistrationinfo";
-$result = $conn->query($sql);
-
-
-			 echo "<table border= 1 align=center cellspacing=0>";
-			 echo "<tr>";
-			 echo "<th width= 200px>User Id</th>";
-			 echo "<th width= 200px>Name</th>";
-			 echo "<th width= 200px>Email</th>";
-			 echo "<th width= 200px>Gender</th>";
-			 echo "<th width= 200px>Phone</th>";
-			 echo "<th width= 200px>bloodGroup</th>";
-			 echo "<th width= 200px>Date Of Birth</th>";
-			 echo "</tr>";
-			 echo "</table>";
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  
-	  
-    //echo "Name----- " . $row["name"]. " ----- Email: " . $row["email"]. "--------Phone " . $row["phone"]. "--------BloodGroup " . $row["boodGroup"]. "--------Date of Birth " . $row["dob"]."<br>";
-	$userId = $row["userId"];
-	$name = $row["name"];
-	$email = $row["email"];
-	$gender = $row["gender"];
-	$phone = $row["phone"];
-	$bloodGroup = $row["bloodGroup"];
-	$dob = $row["dob"];
+$sql = "SELECT userId,name, email, gender,phone, bloodGroup,dob FROM readerregistrationinfo";
+$result = $conobj->query($sql);
 	
+$connection->CloseCon($conobj); 
 	
-	
-			
-	 echo "<table border=1 cellspacing=0 align= center>";
-	 echo "<tr>";
-	 echo "<td width =200px align= center>".$userId."</td>";
-	 echo "<td td width =200px align= center>".$name."</td>";
-	 echo "<td td width =200px align= center>".$email."</td>";
-	 echo "<td td width =200px align= center>".$gender."</td>";
-	 echo "<td td width =200px align= center>".$phone."</td>";
-	 echo "<td td width =200px align= center>".$bloodGroup."</td>";
-	 echo "<td td width =200px align= center>".$dob."</td>";
-	 echo "</tr>";
-	 echo "</table>";
-			
-	
-	
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-echo "<br> <br> <br>";
-include('iud.php');
+
+
 ?>
 
 
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<center>
+   <h2>Reader Information</h2>
+	<table border=1 cellspacing="0">
+	    <thead>
+			<th>UserId</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Gender</th>
+			<th>Phone</th>
+			<th>Blood Group</th>
+			<th>Date of Birth</th>
+			<th>Action</th>
+		</thead>
+		 <tbody>    
+			
+				<?php
+					if ($result->num_rows > 0) {
+		
+		        while($row = $result->fetch_assoc()) {
+			  
+			 echo "<tr>";
+			echo "<td>$row[userId]</td> 
+			      <td>$row[name]
+				  <td>$row[email]</td>
+				  <td>$row[gender]</td>
+			      <td>$row[phone]</td>
+			      <td>$row[bloodGroup]</td>
+			      <td>$row[dob]<br></td>
+			      <td><a href=insertReader.php?id=$row[userId]> Insert</a> <a href=updateReader.php?id=$row[userId]>Update</a> <a href=deleteReader.php?id=$row[userId]>Delete</a><br></td>";
+			echo "</tr>";
+			
+	        }
+			
+		        }
+				?>
+			
+		</tbody>
+	</table>
+	<?php echo "<br><br>";
+	include('findReaderInfo.php');?>
+	</center>
+	
+</body>
+</html>

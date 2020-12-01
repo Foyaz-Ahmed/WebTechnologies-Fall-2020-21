@@ -1,4 +1,5 @@
 <?php
+//include ('../control/findinfoCheck.php');
 include ('../control/findinfoCheck.php');
 
 ?>
