@@ -49,56 +49,28 @@ include('../control/editProfileCheck.php');
 									<tr>
 										<td>Name:</td>
 										<td></td>
-										<td><input type ="text" name = "mname" method ="post"></td>
+										<td><input type ="text" name = "mname" method ="post" value="<?php echo $row['name'];?>"></td>
 										<td><?php echo $nameError;?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
 										<td>Email:</td>
 										<td></td>
-										<td><input type ="email" name ="memail" method ="post"><button title ="hints:sample@com"><b>i</b></button></td>
+										<td><input type ="email" name ="memail" method ="post"  value="<?php echo $row['email'];?>"><button title ="hints:sample@com"><b>i</b></button></td>
 										<td><?php echo $emailErr;?></td>
-									</tr>
-									
-									<tr>
-										<td>Gender:</td>
-										<td><input type ="radio" name ="gender" value ="male" method ="post">Male</td>
-										<td>
-										<input type ="radio" name ="gender" value ="female" method ="post">Female
-										<input type ="radio" name ="gender" value ="female" method ="post">Others
-										</td>
-										<td><?php echo $genderError;?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
 										<td>Address:</td>
 										<td></td>
-										<td><input type ="text" name="address" method ="post"></td>
+										<td><input type ="text" name="address" method ="post"  value="<?php echo $row['address'];?>"></td>
 										<td><?php echo $addressError;?></td>
 									</tr>
 									<tr><td colspan="4"><hr></td></tr>
 									<tr>
-										<td>Blood Group:</td>
-										<td></td>
-									<!--	<td>
-											<select name="bloodgroup">
-											  <option value="">-- select one --</option>
-											  <option value=" A Positive">A+</option>
-											  <option value="A Negetive">A-</option>
-											  <option value="B Positive">B+</option>
-											  <option value="B Negetive">B-</option>
-											  <option value="O Positive">O+</option>
-											  <option value="O Negetive">O-</option>
-											</select>  
-										</td>
-										<td><?php echo $bloodgroupError;?></td>
-										-->
-									</tr>
-									<tr><td colspan="3"><hr></td></tr>
-									<tr>
 										<td>Phone Number:</td>
 										<td></td>
-										<td><input type="tel" name="mphone" method ="post"></td>
+										<td><input type="tel" name="mphone" method ="post"  value="<?php echo $row['phone'];?>"></td>
 										<td><?php echo $noError;?></td>
 										<td><?php echo $numberrError;?></td>
 									</tr>
@@ -106,12 +78,12 @@ include('../control/editProfileCheck.php');
 									<tr>
 										<td>Date Of Birth:</td>
 										<td></td>
-										<td><input type ="date" name ="date" method ="post"></td>
+										<td><input type ="date" name ="date" method ="post"  value="<?php echo $row['dob'];?>"></td>
 										<td><?php echo $dobError;?></td>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
-										<td><input type ="submit" value ="Submit" name="submit"></td>
+										<td><input type ="submit" value ="Update" name="submit"></td>
 										<td></td>
 										<td><input type ="reset"  value ="Reset"></td>
 										<td></td>
