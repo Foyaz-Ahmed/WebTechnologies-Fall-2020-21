@@ -74,9 +74,9 @@ return $flag;
 	return $flag;
  }
  
- function ShowInfoEmployees($conn,$table,$userId)//, $name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob)
+ function ShowInfoEmployees($conn,$table,$userId)
  {
-$sql = $conn->query("SELECT * FROM ". $table." WHERE userid ='". $userId."' ");
+$sql = $conn->query("SELECT * FROM ". $table." WHERE userId ='". $userId."' ");
  return $sql;
  }
  
@@ -105,14 +105,14 @@ return $flag;
 	 
  }
  
-/* function updateReaderInfo($conn,$id, $name, $email,$address,$joiningDate, $phone, $dob)
+ function updateOfficeInfo($conn,$id, $name, $email,$gender,$address,$joiningDate, $phone, $bloodGroup,$dob)
  {
 	 
-	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',address='". $address."',joiningDate='". $joiningDate."', phone='". $phone."',dob='". $dob."' WHERE userId='". $id ."'");
+	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',gender='". $gender."',address='". $address."',joiningDate='". $joiningDate."', phone='". $phone."', bloodGroup='". $bloodGroup."',dob='". $dob."' WHERE userId='". $id ."'");
 	
 	 return $sql;
 	 
- }*/
+ }
  
  function checkOwnProfile($conn,$id)
  
@@ -125,6 +125,12 @@ return $flag;
  {
 	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',gender='". $gender."',address='". $address."', phone='". $phone."',dob='". $dob."' WHERE userId='". $id ."'"); 
 	return $sql;
+ }
+ function OfficeProfileEdit($conn, $ID)
+ 
+ {
+	 $sql = "SELECT * FROM officeinfo where userId = '" . $ID."'";
+	 return $sql;
  }
  
  function CloseCon($conn)

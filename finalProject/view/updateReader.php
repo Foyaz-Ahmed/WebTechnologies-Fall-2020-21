@@ -9,10 +9,10 @@ include ('../control/db.php');
 $connection = new db();
 $conobj=$connection->OpenCon();
 
-		$sql = "SELECT * FROM readerregistrationinfo where userId = '" . $ID."'";
-		$result = $conobj->query($sql);
-		$row = mysqli_fetch_array($result);	
-		$connection->CloseCon($conobj);
+$sql = "SELECT * FROM readerregistrationinfo where userId = '" . $ID."'";
+$result = $conobj->query($sql);
+$row = mysqli_fetch_array($result);	
+$connection->CloseCon($conobj);
 		  
 
  include('../control/updateReaderCheck.php');
