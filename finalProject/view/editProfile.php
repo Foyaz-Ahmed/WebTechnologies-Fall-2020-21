@@ -1,4 +1,7 @@
 <?php
+$radio1="";
+$radio2="";
+$radio3="";
 session_start();
 include('../control/dashboardcheck.php');
 //include('../control/registeValidation.php');
@@ -6,7 +9,8 @@ include('../control/dashboardcheck.php');
 include('../control/editProfileValidation.php');
 include('../control/editProfileCheck.php');
 
-
+//echo $row['gender'];
+//echo $row['gender'];
 
 ?>
 <!DOCTYPE HTML>
@@ -61,6 +65,31 @@ include('../control/editProfileCheck.php');
 										<td></td>
 										<td><input type ="email" name ="memail" method ="post"  value="<?php echo $row['email'];?>"><button title ="hints:sample@com"><b>i</b></button></td>
 										<td><?php echo $emailErr;?></td>
+									</tr>
+									<tr><td colspan="3"><hr></td></tr>
+									<tr>
+										<td>Gender:</td>
+										<td>
+										<?php 
+
+										  if($row["gender"]=="male")
+										  {
+											  $radio1="checked";
+										  }
+										else  if($row["gender"]=="female")
+										  {
+											  $radio2="checked";
+										  }
+										  else{
+											  $radio3="checked";
+										  }
+										
+										
+									echo 	"<input type='radio' value='male' name='gender' $radio1/>Male</td>
+										<td><input type='radio' value='female' name='gender' $radio2 />Female</td>
+										<td><input type='radio' value='others' name='gender' $radio3 />Others</td>
+										<td></td>";
+										?>
 									</tr>
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>

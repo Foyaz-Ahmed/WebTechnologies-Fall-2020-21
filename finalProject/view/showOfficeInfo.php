@@ -54,7 +54,7 @@ $conobj=$connection->OpenCon();
 			      <td>$row[phone]</td>
 			      <td>$row[bloodGroup]</td>
 			      <td>$row[dob]<br></td>
-			      <td><a href=#>Insert</a> <a href=#>Update</a> <a href=#>Delete</a><br></td>";
+			      <td><a href=insertOffice.php?id=$row[userId]> Insert</a> <a href=updateOffice.php?id=$row[userId]>Update</a> <a href=deleteOffice.php?id=$row[userId]>Delete</a><br></td>";
 			echo "</tr>";
 			
 	        }

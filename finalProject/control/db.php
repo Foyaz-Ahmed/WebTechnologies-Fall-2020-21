@@ -105,6 +105,28 @@ return $flag;
 	 
  }
  
+/* function updateReaderInfo($conn,$id, $name, $email,$address,$joiningDate, $phone, $dob)
+ {
+	 
+	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',address='". $address."',joiningDate='". $joiningDate."', phone='". $phone."',dob='". $dob."' WHERE userId='". $id ."'");
+	
+	 return $sql;
+	 
+ }*/
+ 
+ function checkOwnProfile($conn,$id)
+ 
+ {
+	 $result = $conn->query("SELECT * from officeinfo WHERE userId='" . $id."'");
+	 return $result;
+ }
+ function updateOwnProfile($conn,$id,$name,$email,$gender,$address,$phone,$dob)
+ 
+ {
+	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',gender='". $gender."',address='". $address."', phone='". $phone."',dob='". $dob."' WHERE userId='". $id ."'"); 
+	return $sql;
+ }
+ 
  function CloseCon($conn)
  {
  $conn -> close();
