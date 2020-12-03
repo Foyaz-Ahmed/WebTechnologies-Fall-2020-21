@@ -24,6 +24,7 @@ $conobj=$connection->OpenCon();
 <body>
 <center>
    <h2>Office Information</h2>
+   <a href="addType.php"><button><h3>Add Office Employee</h3></button></a><br><br>
 	<table border=1 cellspacing="0">
 	    <thead>
 			<th>UserId</th>
@@ -54,7 +55,7 @@ $conobj=$connection->OpenCon();
 			      <td>$row[phone]</td>
 			      <td>$row[bloodGroup]</td>
 			      <td>$row[dob]<br></td>
-			      <td><a href=insertOffice.php?id=$row[userId]> Insert</a> <a href=updateOffice.php?id=$row[userId]>Update</a> <a href=deleteOffice.php?id=$row[userId]>Delete</a><br></td>";
+			      <td><a href=updateOffice.php?id=$row[userId]>Update</a> <a href=deleteOffice.php?id=$row[userId]>Delete</a><br></td>";
 			echo "</tr>";
 			
 	        }

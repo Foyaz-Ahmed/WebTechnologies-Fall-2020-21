@@ -29,7 +29,7 @@
 		  $pass = $_POST["mpassword"];
 		  $cPass = $_POST["mcpassword"];
 		  $phone = $_POST["mphone"];
-		  $bGroup = $_POST["bloodgroup"];
+		  //$bGroup = $_POST["bloodgroup"];
 		  //$gender = $_POST["gender"];
 		  $dob = $_POST["date"];
 		  
@@ -126,7 +126,7 @@
 		{
 			$genderError = "Seclect the Gender";
 		}
-		if (empty($_REQUEST["bGroup"]))
+		if (empty($_REQUEST["bloodgroup"]))
 		{
 			$bloodgroupError = "Choose blood Group";
 		}

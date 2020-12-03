@@ -24,6 +24,7 @@ $connection->CloseCon($conobj);
 <body>
 <center>
    <h2>Reader Information</h2>
+   <a href="addReader.php"><button><h3>Add Reader</h3></button></a><br><br>
 	<table border=1 cellspacing="0">
 	    <thead>
 			<th>UserId</th>
@@ -50,7 +51,7 @@ $connection->CloseCon($conobj);
 			      <td>$row[phone]</td>
 			      <td>$row[bloodGroup]</td>
 			      <td>$row[dob]<br></td>
-			      <td><a href=insertReader.php?id=$row[userId]> Insert</a> <a href=updateReader.php?id=$row[userId]>Update</a> <a href=deleteReader.php?id=$row[userId]>Delete</a><br></td>";
+			      <td><a href=updateReader.php?id=$row[userId]>Update</a> <a href=deleteReader.php?id=$row[userId]>Delete</a><br></td>";
 			echo "</tr>";
 			
 	        }
