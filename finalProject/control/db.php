@@ -133,6 +133,35 @@ return $flag;
 	 return $sql;
  }
  
+ function deleteOfficeInfo($conn,$id)
+ 
+ {
+	 $sql = $conn->query("DELETE FROM officeinfo WHERE userId= '".$id."'");
+	 return $sql;
+
+ }
+ function deleteOfficeLoginInfo($conn,$id)
+ 
+ {
+	 $sql1 = $conn->query("DELETE FROM officelogin WHERE userId= '".$id."'");
+	 return $sql1;
+
+ }
+  function deleteReaderInfo($conn,$id)
+ 
+ {
+	 $sql = $conn->query("DELETE FROM readerregistrationinfo WHERE userId= '".$id."'");
+	 return $sql;
+
+ }
+ function deleteReaderLoginInfo($conn,$id)
+ 
+ {
+	 $sql1 = $conn->query("DELETE FROM readerlogin WHERE userId= '".$id."'");
+	 return $sql1;
+
+ }
+ 
  function CloseCon($conn)
  {
  $conn -> close();

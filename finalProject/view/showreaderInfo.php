@@ -51,7 +51,7 @@ $connection->CloseCon($conobj);
 			      <td>$row[phone]</td>
 			      <td>$row[bloodGroup]</td>
 			      <td>$row[dob]<br></td>
-			      <td><a href=updateReader.php?id=$row[userId]>Update</a> <a href=deleteReader.php?id=$row[userId]>Delete</a><br></td>";
+			      <td><a href=updateReader.php?id=$row[userId]>Update</a> <a href=../control/deleteReaderInfoCheck.php?id=$row[userId]>Delete</a><br></td>";
 			echo "</tr>";
 			
 	        }
