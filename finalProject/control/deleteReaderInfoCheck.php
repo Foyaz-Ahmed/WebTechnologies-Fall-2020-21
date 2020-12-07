@@ -14,7 +14,7 @@ $sql1 = db::deleteReaderLoginInfo($conobj,$id);
 
 	if ($sql === TRUE && $sql1== TRUE) {
 		echo "DELETED SUCCESSFULLY";
-		header('Location:../view/showReaderInfo.php.php');
+		header('Location:../view/showReaderInfo.php');
 		}
 		else {
 		echo "Error Deleting record: " ;

@@ -1,6 +1,7 @@
 <?php
 
 include ('header.php');
+include ('menubar.php');
 
 
 ?>
@@ -9,12 +10,12 @@ include ('header.php');
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>News Portal Management System</title>
+	<link rel="stylesheet" href="../css/menubar.css" />
 </head>
 <body>
-	<div>
+	<div class="registration_wrapper">
 		<form action="">
-			<fieldset>
 				<table align="center" height="500px">
 					<tr>
 						<td><img width ="200px" height ="150px" src="../images/readerreg.png" alt="readerRegistraion" /></td>
@@ -27,23 +28,24 @@ include ('header.php');
 					</tr>
 					
 					<tr>
-						<td align="center"><a href="register.php"><b>User Registration</b></a></td>
+						<td align="center"><a id="userform" href="register.php"><b>User Registration</b></a></td>
 						<td></td>
 						<td></td>
 						<td></td>
-						<td align ="center"><a href="adminForm.php"><b>Admin Registration</a></b></td>
+						<td align ="center"><a id="adminform"  href="adminForm.php"><b>Admin Registration</a></b></td>
 
-						<td align ="center"><a href="journalistForm.php"><b>Journalist Registration</a></b></td>
+						<td align ="center"><a id="journalistform" href="journalistForm.php"><b>Journalist Registration</a></b></td>
 						
-						<td align ="center"><a href="newsEditorForm.php"><b>News Editor Registration</a></b></td>
+						<td align ="center"><a id="newsEditorform" href="newsEditorForm.php"><b>News Editor Registration</a></b></td>
 						
 					</tr>
 					
 					
 				</table>
-			</fieldset>
+			</form>
+		</div>
 			<?php include ('footer.php');?>
-		</form>
-	</div>
+		
+	
 </body>
 </html>
