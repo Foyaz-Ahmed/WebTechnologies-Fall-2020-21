@@ -1,0 +1,59 @@
+.register_wrapper{
+margin-top:20px;
+background:#AFD3E9;	
+
+}
+form{
+	border:1px solid black;
+	width:700px;
+	margin-bottom:20px;
+}
+input[type="text"]{
+	width:445px;
+	height:30px;
+	margin-bottom:20px;
+}
+input[type="password"]{
+	width:445px;
+	height:30px;
+	margin-bottom:20px;
+}
+input[type="email"]{
+	width:445px;
+	height:30px;
+	margin-bottom:20px;
+}
+input[type="date"]{
+	width:445px;
+	height:30px;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+input[type="radio"]{
+
+	margin-bottom:20px;
+}
+input[type="tel"]{
+	width:445px;
+	height:30px;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+input[type ="submit"]{
+width:100px;
+margin-top:10px;
+height:40px;
+background:#2691d9;
+font-size:14px;
+color:#e9f4fb;
+font-weight:300;
+cursor:pointer;
+outline:none;
+border:none;
+margin-left:40px;
+margin-bottom:20px;
+}
+input[type ="submit"]:hover{
+	background:orange;
+}
+

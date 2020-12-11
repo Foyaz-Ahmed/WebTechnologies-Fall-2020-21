@@ -1,5 +1,7 @@
 <?php
-include('header.php');
+include ('header.php');
+include('menubar.php');
+
 include('../control/logincheck.php');
 
 if(isset($_SESSION['userID'])){
@@ -7,64 +9,38 @@ header("location: dashboard.php");
 }
 ?>
 
-
 <!DOCTYPE HTML>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8">
-		<title>News Portal Management System</title>
-	</head>
-	<body>
-		<div>
-			<table border="1" cellspacing="0">
-				<tr>
-					<td width="1800px" height="500px">
-						<form action="" method="post">
-								<fieldset>
-								<legend>LOGIN</legend>
-									<table align="center">
-										<tr>
-											<td height="50px"  ><b>User ID:</b></td>
-											<td><input type="text" name="userID" placeholder="user ID"/></td>
-										</tr>
-										<tr>
-											<td height="100px"><b>Password:</b></td>
-											<td><input type="Password" name="password" placeholder="password" /></td>
-										</tr>
-										<tr>
-											<td><b>Choose Option:</b></td>
-											
-											<td><input type="radio" name="Position" value="Admin"/>Admin</td>
-											<td><input type="radio" name="Position" value ="News Editor" />News Editor</td>
-											<td><input type="radio" name="Position" value="Journalist" />Journalist</td>
-											<td><input type="radio" name="Position" value="Reader" />Reader</td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<?php 
-													
-													echo $error;
-												?>
-											</td>
-										</tr>
-										<tr>
-											<td colspan="2"><hr></td>
-										</tr>
-										<tr>
-										<td></td>
-											<td><input type="submit" name="submit"  value="LOGIN" />
-											<a href="forgotPassword.php">Forgot Password?</a>
-											</td>
-										</tr>
-									</table>
-								</fieldset>
-							</form>
-					</td>	
-				</tr>
-			</table>
-			<?php include('footer.php');?>
-		</div>
-					
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="../css/log.css" />
+</head>
+
+<body>
+	<br><br>
+	<div class="login_page">
+		<div class="form">
+			<form action="" method="post" class="loginform">
+				<img class="picture" src="../images/login.jpg" alt="loginpicture" />
+				<h2>Login</h2>
+				<input  type="text" name="userID" placeholder="user Id" /><br>
+				<input type="password"  name="password" placeholder="password" />
+				<div class="typedesign">
+				<label for="gender"><h3>Type:<h3></label>
+				<input id="radio" type="radio" name="Position" value="Admin"/><b>Admin</b>
+				<input id="radio" type="radio" name="Position" value ="News Editor"/><b>News Editor</b>
+				<input  id="radio" type="radio" name="Position" value="Journalist"/><b>Journalist</b>
+				<input  id="radio" type="radio" name="Position" value="Reader"/><b>Reader</b><br>
+			</div>
+			<input id="submit" type="submit" name="submit" value="LOGIN" />
+			<div class="sign_up">
+				<h3>Don't have an account?</h3><a href="registration.php">sign up</a>
+			</div>
 			
-	</body>
+			</form>
+		</div>
+	</div>
+</body>
+<?php include('footer.php');?>
 </html>

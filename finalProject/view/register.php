@@ -1,5 +1,6 @@
 <?php
 	include('header.php');
+	include('menubar.php');
 	include('../control/registerCheck.php');
 	include('../control/registeValidation.php');
 
@@ -10,22 +11,26 @@
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="../css/registration.css" />
+</head>
 <body>
 <center>
+	<div class="register_wrapper">
 
 	<form action="" method="post"   enctype="multipart/form-data">
-		<fieldset>	
+	
 			<legend><h5>Fill up the Registration Form:</h5></legend>
 			<table align="center">
 				<tr>
-					<td>Name:</td>
+					<td><h4>Name:</h4></td>
 					<td></td>
 					<td><input type ="text" name = "mname"></td>
 					<td><?php echo $nameError;?></td>
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>User Id:</td>
+					<td><h4>User Id:</h4></td>
 					<td></td>
 					<td ><input type ="text" name = "userId"></td>
 					<td><?php echo $userIdError;?></td>
@@ -33,14 +38,14 @@
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Email:</td>
+					<td><h4>Email:<h4></td>
 					<td></td>
 					<td><input type ="email" name ="memail"><button title ="hints:sample@com"><b>i</b></button></td>
 					<td><?php echo $emailErr;?></td>
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Password</td>
+					<td><h4>Password:</h4></td>
 					<td></td>
 					<td><input type ="password" name ="mpassword"></td>
 					<td><?php echo $passErr;
@@ -50,16 +55,16 @@
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Confirm Password:</td>
+					<td><h4>Confirm Password:</h4></td>
 					<td></td>
 					<td><input type ="password" name ="mcpassword">
 					<td><?php echo $cPassError;?></td>
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Gender:</td>
-					<td><input type ="radio" name ="gender" value ="male">Male</td>
-					<td>
+					<td><h4>Gender:<h4></td>
+					<td></td>
+					<td><input type ="radio" name ="gender" value ="male">Male
 					<input type ="radio" name ="gender" value ="female">Female
 					<input type ="radio" name ="gender" value ="female">Others
 					</td>
@@ -67,24 +72,26 @@
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Blood Group:</td>
+					<td><h4>Blood Group:</h4></td>
 					<td></td>
 					<td>
+						<div class="select"></div>
 						<select name="bloodgroup">
 						  <option value="">-- select one --</option>
-						  <option value=" A positive">A+</option>
-						  <option value="A Negetive">A-</option>
-						  <option value="B positive">B+</option>
-						  <option value="B negetive">B-</option>
-						  <option value="O positive">O+</option>
-						  <option value="O Negetive">O-</option>
-						</select>  
+						  <option value=" A positive"><h4>A+<h4></option>
+						  <option value="A Negetive"><h4>A-<h4></option>
+						  <option value="B positive"><h4>B+</h4></option>
+						  <option value="B negetive"><h4>B-</h4></option>
+						  <option value="O positive"><h4>O+</h4></option>
+						  <option value="O Negetive"><h4>O-<h4></option>
+						</select>
+					</select>
 					</td>
 					<td><?php echo $bloodgroupError;?></td>
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Phone Number:</td>
+					<td><h4>Phone Number:</h4></td>
 					<td></td>
 					<td><input type="tel" name="mphone"></td>
 					<td><?php echo $noError;?></td>
@@ -92,30 +99,23 @@
 				</tr>
 				<tr><td><hr></td></tr>
 				<tr>
-					<td>Choose profile Picture:</td>
+					<td></h4>Choose profile Picture:</h4></td>
 					<td></td>
 					<td><input type="file" name="fileToUpload" id="fileToUpload"></td>
 					<td><?php echo $fileError; ?></td>
 					<td><?php echo $profileError; ?></td>
 				</tr>
 				<tr>
-					<td>Date Of Birth:</td>
+					<td></h4>Date Of Birth:</h4></td>
 					<td></td>
 					<td><input type ="date" name ="date"></td>
 					<td><?php echo $dobError;?></td>
 				</tr>
 				<tr><td><hr></td></tr>
-				<tr>
-					<td><input name="submit" type="submit" value="Register"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				
 			</table>
-	
-	    </fieldset>	
+			<input name="submit" type="submit" value="Register">
 	</form>
+	</div>
 	 <?php echo $error; ?>
 	</center>
 	<?php include('footer.php')?>;

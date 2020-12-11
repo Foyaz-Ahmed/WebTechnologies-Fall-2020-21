@@ -1,0 +1,17 @@
+.navbar_design{
+	background:black;
+	color:orange;
+	margin-top:20px;
+}
+.navbar_design  a{
+	color:orange;
+	padding:10px 20px;
+	text-decoration:none;
+	
+}
+.navbar_design a:hover{
+	color:green;
+}
+input{
+	height:20px;
+}

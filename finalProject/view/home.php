@@ -5,21 +5,27 @@ include('menubar.php');
 ?>
 
 <html>
+	<head>
+		<meta charset="UTF-8">
+		<title>News Portal Management System</title>
+		<link rel="stylesheet" href="../css/navbar.css" />
+	</head>
+	
 	</body>
 		<nav>
-			<div width="900px" align="">
-				<h1>
-					<a href="#">Bangladesh</a>|
-					<a href="#">Politics</a>|
-					<a href="#">International</a>|
-					<a href="#">Sport</a>|
-					<a href="#">Entertainment</a>|
-					<a href="#">Economy</a>|
-					<a href="#">Life & Style</a>|
+			<div width="900px" align="" class="navbar_design">
+				<h3>
+					<a href="#">Bangladesh</a>
+					<a href="#">Politics</a>
+					<a href="#">International</a>
+					<a href="#">Sport</a>
+					<a href="#">Entertainment</a>
+					<a href="#">Economy</a>
+					<a href="#">Life & Style</a>
 					<a href="#">Others</a>
 					<b>Search</b>
 					<input type="text">
-				</h1>	
+				</h3>	
 			</div>
 		</nav>
 		<div>
