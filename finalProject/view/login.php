@@ -33,6 +33,8 @@ header("location: dashboard.php");
 				<input  id="radio" type="radio" name="Position" value="Journalist"/><b>Journalist</b>
 				<input  id="radio" type="radio" name="Position" value="Reader"/><b>Reader</b><br>
 			</div>
+			<?php echo $error;?>;
+			<hr>
 			<input id="submit" type="submit" name="submit" value="LOGIN" />
 			<div class="sign_up">
 				<h3>Don't have an account?</h3><a href="registration.php">sign up</a>

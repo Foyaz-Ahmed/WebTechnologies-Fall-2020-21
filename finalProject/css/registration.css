@@ -3,6 +3,7 @@ margin-top:20px;
 background:#AFD3E9;	
 
 }
+
 form{
 	border:1px solid black;
 	width:700px;
@@ -53,6 +54,7 @@ border:none;
 margin-left:40px;
 margin-bottom:20px;
 }
+
 input[type ="submit"]:hover{
 	background:orange;
 }

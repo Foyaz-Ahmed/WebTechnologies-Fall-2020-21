@@ -18,6 +18,7 @@ include('../control/editProfileCheck.php');
 	<head>
 		<meta charset="UTF-8">
 		<title>News Portal Management System</title>
+		<link rel="stylesheet" href="../css/dashboard.css" />
 	</head>
 	<body>
 	<center>
@@ -25,10 +26,15 @@ include('../control/editProfileCheck.php');
 		  <form action="" method="post">
 			<table border="1">	
 					</tr>
-						<td colspan ="2" width ="100%" height="50px" align="center"><h1>Welcome to Your Profile</h1></td>
+						<td class="dashboard_head" colspan ="2" width ="100%" height="50px" align="center">
+							<h1>
+								Welcome to<?php echo " " .$name; ?> in your profile
+								
+						   </h1>
+						</td>
 					</tr>
 					</tr>
-						<td height ="400"><b align="left"><h1>Account</h1></b>
+						<td  class="side_content" height ="400"><b align="left"><h1>Account</h1></b>
 							<hr>
 							<ul>
 								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
@@ -126,7 +132,7 @@ include('../control/editProfileCheck.php');
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center"><h4>Copyright from @glaxoserfr4.com<h4></td>
+						<td class="footer_design"  colspan="2" align="center"><h4>Copyright from @glaxoserfr4.com<h4></td>
 					</tr>
 			</table>
 		</form>	

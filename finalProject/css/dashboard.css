@@ -1,0 +1,24 @@
+.dashboard_head{
+	background:#5DADE2;
+	color:#1F343E;
+	font-style:italic;
+	
+}
+.footer_design{
+	background:#D3BC94;
+}
+.side_content{
+	background:#E59FDA;
+}
+.side_content ul li a{
+	text-decoration:none;
+	color:#34495E;
+	
+	display:block;
+}
+.side_content ul li a:hover{
+	text-decoration:underline;
+	color:#A93226;
+	background:#00FF00;
+	
+}
