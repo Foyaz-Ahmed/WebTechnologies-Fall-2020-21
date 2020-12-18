@@ -1,3 +1,9 @@
+<?php
+
+ 
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
@@ -23,7 +29,9 @@
 						
 					</tr>
 					</tr>
-						<td class="side_content" height ="400"><b align="left"><h1>Account</h1></b>
+						<td class="side_content" height ="400"><b align="left"><h1>Account-<?php if(isset($_COOKIE["userId"])){
+						                                                                  echo $_COOKIE["userId"];
+																						  }?></h1></b>
 							<hr>
 							<ul>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
@@ -35,6 +43,7 @@
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search</h3></a></li>";
 								}?>
 								<?php if($position=="News Editor"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";

@@ -161,6 +161,11 @@ return $flag;
 	 return $sql1;
 
  }
+ function GetUserByUname($conn,$table, $uname)
+ {
+$result = $conn->query("SELECT * FROM  $table WHERE name='$uname'");
+ return $result;
+ }
  
  function CloseCon($conn)
  {

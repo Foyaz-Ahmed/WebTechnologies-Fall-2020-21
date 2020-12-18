@@ -44,8 +44,9 @@ include ('menubar.php');
 				</table>
 			</form>
 		</div>
-			<?php include ('footer.php');?>
+			
 		
 	
 </body>
 </html>
+<?php include ('footer.php');?>

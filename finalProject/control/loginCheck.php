@@ -1,5 +1,6 @@
 <?php
 include('db.php');
+
 session_start(); 
 
 $error="";
@@ -15,7 +16,9 @@ $error = "<b>Empty field Please give user Id & password</b>";
 		$userId = $_POST['userID'];
 		$password= $_POST['password'];
 		$position = $_POST['Position'];
-	
+		
+		 $cookie_name = "user";
+		 $cookie_value= $userId;
 		
 			   
 		$connection = new db();
@@ -30,6 +33,7 @@ $error = "<b>Empty field Please give user Id & password</b>";
 			$_SESSION["userID"] = $userId;
 			$_SESSION["password"] = $password;
 			$_SESSION["Position"] = $position;
+			setcookie("userId" , $cookie_value, time() + (86400 * 30), "/"); 
 			
 	
 			   }
