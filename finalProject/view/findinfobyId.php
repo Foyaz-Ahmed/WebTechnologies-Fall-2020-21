@@ -124,7 +124,7 @@ include ('../control/findinfoCheck.php');
                 </td>
 			</tr>
 			<tr>
-			<td colspan=""3><input type="submit" name="search" value="Find"><br><br></td>
+			<td id="submit" colspan=""3><input type="submit" name="search" value="Find"><br><br></td>
 			</tr>
         	</table>
         </form>

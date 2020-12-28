@@ -3,7 +3,7 @@
 $id = $_SESSION["userID"];
 $position = $_SESSION["Position"];
 $error="";
-
+global $name;
 
 $connect = mysqli_connect("localhost", "root", "", "mydb") or die("Connection Error: " . mysqli_error($conn));
 

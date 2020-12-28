@@ -1,0 +1,32 @@
+div.sticky {
+position: sticky;
+width:100%;
+top: 0;
+padding: 0;
+border: 2px solid #8461d4;
+}
+
+
+#header{
+   background:#7CA1F1;      
+   padding: 10px 0;
+   color: #fff;
+	
+}
+
+#header h2{
+color: #ffffff;
+font-style:italic;
+font-family:monotype corsiva;
+
+}
+#header h2:hover{
+color: #FF803A;
+}
+#header p{
+	color:#ffffff;
+	font-style:italic;
+	margin-left:20px;
+	font-family:monotype corsiva;
+	
+}

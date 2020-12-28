@@ -1,6 +1,6 @@
 <?php
 include('db.php');
-session_start(); 
+
 		  
  $error="";
  $matchPass="";

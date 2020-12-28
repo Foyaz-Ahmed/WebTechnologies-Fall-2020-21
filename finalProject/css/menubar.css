@@ -2,27 +2,12 @@
 margin:0;
 padding:0; 
 }
-#header{
-	background:#7CA1F1;
-	padding:5px;
-	
-}
-#header h2{
-color: #ffffff;
-}
-#header h2:hover{
-color: #FF803A;
-}
-#header p{
-	color:#ffffff;
-	font-style:italic;
-	margin-left:20px;
-}
 .menubar_class{
 	background:#C32A2F;
 	height:18px;
 	padding:10px 20px;
 	text-align:center;
+	width:100%;
 }	
 #menu{
 	padding:0;

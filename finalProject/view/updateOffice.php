@@ -13,9 +13,7 @@ include ('../control/db.php');
 
 		$sql = db::OfficeProfileEdit($conobj,$ID);
 		$result = $conobj->query($sql);
-		$row = mysqli_fetch_array($result);	
-		//echo $row['bloodGroup'];
-		//echo $row['bloodGroup'];
+		$row = mysqli_fetch_array($result);
 		$connection->CloseCon($conobj);
 		  
 

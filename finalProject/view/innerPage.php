@@ -19,7 +19,11 @@
 					</tr>
 						
 						<td class="dashboard_head" colspan ="2" width ="100%" height="50px" align="center">
-						
+						 <?php if(isset($_COOKIE["userId"]))
+						 {
+							 echo "you are visited previously";
+						 }
+						 ?>
 						<h1>
 								Welcome to<?php echo " " .$name; ?> in your profile
 								
