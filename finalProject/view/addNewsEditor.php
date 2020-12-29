@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../control/officeJournalistValidation.php');
+include('../control/addValidation.php');
 include('../control/addNewsEditorFormCheck.php');
 $position = $_SESSION["Position"]; 
 include('../control/dashboardCheck.php');
@@ -22,7 +22,7 @@ include('../control/dashboardCheck.php');
 		<div>
 		<center>
 		<form method="post" action="">
-			<table border="1">	
+			<table border="1" class="table_update">	
 					</tr>
 						<td class="dashboard_head" colspan ="2" width ="100%" height="50px" align="center">
 						<h1>
@@ -147,14 +147,6 @@ include('../control/dashboardCheck.php');
 				</tr>
 				<tr><td colspan="4"><hr></td></tr>
 				<tr>
-					<td>Choose profile Picture:</td>
-					<td></td>
-					<td><input type="file" name="fileToUpload" id="fileToUpload"></td>
-					<td></td>
-					<td><? echo $fileError;?></td>
-				</tr>
-				<tr><td colspan="4"><hr></td></tr>
-				<tr>
 					<td>Date Of Birth:</td>
 					<td></td>
 					<td><input type ="date" name ="date"></td>
@@ -162,7 +154,7 @@ include('../control/dashboardCheck.php');
 				</tr>
 				<tr><td colspan="4"><hr></td></tr>
 				<tr>
-					<td><input name="submit" type="submit" value="Register"></td>
+					<td><input name="submit" type="submit" value="Insert"></td>
 					<td></td>
 					<td></td>
 				</tr>

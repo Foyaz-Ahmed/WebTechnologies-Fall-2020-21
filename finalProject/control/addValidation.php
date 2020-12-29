@@ -1,6 +1,9 @@
 	<?php
 	
-		$name = $userId = $email = $pass = $cPass = $phone = $bGroup = $gender = $dob = "";
+		  $name = $userId = $email = $pass = $cPass = $phone = $bGroup = $gender = $dob = "";
+		  $jdate = $address = "";
+		  $jDateError ="";
+		  $addressError ="";
 		  $nameError ="";
 		  $userIdError ="";
 		  $emailErr ="";
@@ -121,7 +124,15 @@
 			 $validPass = "Password doesn't Match";
 			
 		}
+		 if (empty($address))
+		{
+			$addressError = "Enter Your Address";
+		}
 		
+		if (empty($jdate))
+		{
+			$jDateError = "Fill up the joining Date";
+		}
 		if (empty($_POST["gender"]))
 		{
 			$genderError = "Seclect the Gender";
@@ -161,17 +172,6 @@
 		{
 			$dobError = "Seclect the Date of Birth";
 		}
-		
-		$target_dir = "../files/";
-		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-
-		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-		}
-		else{
-			$fileError= "Empty field or there was an error uploading your file.";
-			}
-
 		
 		}
 		

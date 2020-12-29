@@ -102,7 +102,7 @@
 				<tr>
 					<td><h4>Choose profile Picture:</h4></td>
 					<td></td>
-					<td><input type="file" name="fileToUpload" id="fileToUpload" id="file"></td>
+					<td><input type="file" name="fileToUpload" id="fileToUpload"></td>
 					<td><?php echo $fileError; ?></td>
 					<td><?php echo $profileError; ?></td>
 				</tr>

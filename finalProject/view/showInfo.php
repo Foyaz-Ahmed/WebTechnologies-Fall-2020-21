@@ -1,72 +1,103 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
+include ('../control/db.php');
 
-$userId;
+session_start();
+$position = $_SESSION["Position"]; 
+include('../control/dashboardCheck.php');
+$connection = new db();
+$conobj=$connection->OpenCon();
 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT userId, password, position FROM officelogin";
-$result = $conn->query($sql);
-
-			 echo "<h3 align=center>LOG IN INFORMATION TABLE:</h3>";
-			 echo "<table border= 1 align=center>";
-			 echo "<tr>";
-			 echo "<th width= 200px>User Id</th>";
-			 echo "<th width= 200px>Password</th>";
-			 echo "<th width= 200px>Position</th>";
-			 echo "</tr>";
-			 echo "</table>";
-
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  
-	  
-    //echo "UserId: " . $row["userId"]. " ----- Password: " . $row["password"]. "--------Possition " . $row["position"]. "<br>";
-			$userId = $row["userId"];
-			$password =$row["password"];
-			$position =$row["position"];
+$sql = "SELECT * FROM officelogin";
+$result = $conobj->query($sql);
 			
-     echo "<table border=1 cellspacing=0 align= center>";
-	 echo "<tr>";
-	 echo "<td width =200px align= center>".$userId."</td>";
-	 echo "<td td width =200px align= center>".$password."</td>";
-	 echo "<td td width =200px align= center>".$position."</td>";
-	 echo "</tr>";
-	 echo "</table>";
-	
-	
-	
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-
 ?>
+
 
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body align="center">
-<br>
-<br>
-<br>
-<br>
-	<button>Insert</button>
-	<button>Update</button>
-	<button>Delete</button>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>News Portal Management System</title>
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<link rel="stylesheet" href="../css/officeInfo.css" />
+	</head>
+	<body>
+		<div>
+		<center>
+		<form method="post" action="">
+			<table border="1">	
+					</tr>
+						<td class="dashboard_head" colspan ="2" width ="100%" height="50px" align="center">
+						<h1>
+							Welcome to<?php echo " " .$name; ?> in your profile
+								
+						</h1>
+						</td>
+					</tr>
+					</tr>
+						<td class="side_content" height ="400"><b align="left"><h1>Account-<?php if(isset($_COOKIE["userId"])){
+						                                                                  echo $_COOKIE["userId"];
+																						  }?></h1></b></b>
+							<hr>
+							<ul>
+								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
+								<li><a href="profile.php"><h3>View Profile</h3></a></li>
+								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
+								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
+								<li><a href="changePassword.php"><h3>Change Password</h3></a></li>
+								<?php if($position=="Admin"){
+								echo "<li><a href= manageEmployee.php><h3>Manage Employee</h3></a></li>";
+								}?>
+								<?php if($position=== "Admin" || $position=="Journalist"){
+								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								}?>
+								<?php if($position=="News Editor"){
+								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
+								}?>
+								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+							</ul>
+						</td>
+						<td width ="1200px" height ="700px">
+		
+						 <div id="table">
+							<table  class="table" border=1 cellspacing="0" align="center">
+							   <div class="table_head">
+								<thead class="table_head">
+									<th>UserId</th>
+									<th>Password</th>
+									<th>Position</th>
+								</thead>
+								</div>
+								 <tbody class="table_loginbody">    
+									
+										<?php
+											if ($result->num_rows > 0) {
+								
+										while($row = $result->fetch_assoc()) {
+									  
+									 echo "<tr>";
+									echo "<td>$row[userId]</td> 
+										  <td>$row[password]
+										  <td>$row[position]</td>";
+									echo "</tr>";
+									
+									}
+									
+										}
+										?>
+									
+								</tbody>
+							
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="footer_design" colspan="2" align="center"><h4>Copyright from @glaxoserfr4.com<h4></td>
+					</tr>
+			</table>
+			</center>
+	<form>	
+		</div>
+	</body>
 </html>
+

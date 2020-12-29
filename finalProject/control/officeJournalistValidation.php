@@ -1,6 +1,6 @@
 <?php
 
-		  include ('registeValidation.php');
+	    include ('registeValidation.php');
 
 
 		  $jdate = $address = "";

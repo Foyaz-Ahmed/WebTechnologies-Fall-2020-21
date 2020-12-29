@@ -1,10 +1,10 @@
 function validateForm()
 {
 	var name = document.getElementById("name").value;
-	var pass = document.getElementById("password").value;
-	var em = document.getElementById("email").value;
-	var cpass = document.getElementById("cpassword").value;
 	var id = document.getElementById("id").value;
+	var em = document.getElementById("email").value;
+	var pass = document.getElementById("password").value;
+	var cpass = document.getElementById("cpassword").value;
 	var phone = document.getElementById("phone").value;
 	var date = document.getElementById("dob").value;
 	
@@ -19,44 +19,6 @@ function validateForm()
 			 alert('Please enter valid Name');
 			 return false;
 		}
-	}
-
-
-	if(pass=="")
-	{
-		alert("empty password field");
-		return false;
-	}
-	if(pass.length < 8) {  
-	 alert("password should be must at least 8 characters");
-     return false;  
-	 } 
-
-    if(em == "")
-		{
-		alert("empty email field");
-
-		return false;
-	    }
-	if(em != ""){
-		
-		var regEm = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-		if(!regEm.test(em)){
-		alert("You have entered an invalid email address!");
-		return false;
-
-		}
-        }
-	
-    if(cpass == "")
-		{
-		alert("Confirm password is empty");
-		
-		return false;
-	    }
-	if(cpass!= "" && pass!=cpass)
-	{
-		alert("password doesn't match");
 	}
 	if(id == "")
 	{
@@ -73,6 +35,44 @@ function validateForm()
 	}
 	
 	 }
+	if(em == "")
+		{
+		alert("empty email field");
+
+		return false;
+	    }
+	if(em != ""){
+		
+		var regEm = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		if(!regEm.test(em)){
+		alert("You have entered an invalid email address!");
+		return false;
+
+		}
+        }
+
+
+	if(pass=="")
+	{
+		alert("empty password field");
+		return false;
+	}
+	if(pass.length < 8) {  
+	 alert("password should be must at least 8 characters");
+     return false;  
+	 } 
+
+    if(cpass == "")
+		{
+		alert("Confirm password is empty");
+		
+		return false;
+	    }
+	if(cpass!= "" && pass!=cpass)
+	{
+		alert("password doesn't match");
+	}
+	
   if (document.getElementById("male").checked == false &&  document.getElementById("female").checked == false && document.getElementById("others").checked == false)
   {
     alert("Select gender");

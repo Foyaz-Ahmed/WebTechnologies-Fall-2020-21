@@ -47,13 +47,15 @@
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
-								echo "<li><a href= searchEmployee.php><h3>Search</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
+								echo "<li><a href=../control/logout.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
 								<?php if($position=="News Editor"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
 								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+								
 							</ul>
 							<td width ="1200px" height ="700px"></td>
 						</td>
