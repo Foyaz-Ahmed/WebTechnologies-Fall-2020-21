@@ -1,9 +1,10 @@
 <?php
 
 session_start();
-//setcookie("userId",$cookie_value, time() - (86400 * 50), "/"); 
+
 if(session_destroy())
 {
+setcookie("userId","", time() - (86400 * 50), "/"); 
 header("Location: ../view/login.php");
 }
 

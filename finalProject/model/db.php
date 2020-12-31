@@ -167,37 +167,6 @@ $result = $conn->query("SELECT * FROM  $table WHERE name='$uname'");
  return $result;
  }
  
-function postNews($conn,$catagory, $headline, $details, $name)
- 
- {
-	$flag=1;
-	$stmt = $conn->prepare("INSERT INTO newsdetails (newscategory,newsheadline,newsbody,writername) VALUES (?, ?, ?, ?)");
-
-
-	$stmt->bind_param("ssss", $catagory, $headline, $details, $name);
-
-	$stmt->execute();
-	$stmt->close();
-
-	return $flag;
- }
- 
- function updateNewsInfo($conn,$catagory,$headline,$details,$name)
- 
- {
-	$sql = $conn->query( "UPDATE newsdetails set newscategory='". $catagory."', newsheadline='". $headline."',newsbody='". $details."' WHERE writerName='". $name."'"); 
-	return $sql;
- }
- 
- function  deleteNewsInfo($conn,$id)
- 
- {
-	 $sql = $conn->query("DELETE FROM newsdetails WHERE newscategory = '".$id."'");
-	 return $sql;
-
- }
-
- 
  function CloseCon($conn)
  {
  $conn -> close();

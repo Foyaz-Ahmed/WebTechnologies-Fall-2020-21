@@ -1,4 +1,7 @@
 <?php
+global $ID;
+$ID = $_GET['catagory'];
+$option1 = $option2 = $option3 = $option4 = $option5 = $option6 ="";
 include ('../control/db.php');
 
 session_start();
@@ -7,10 +10,13 @@ include('../control/dashboardCheck.php');
 $connection = new db();
 $conobj=$connection->OpenCon();
 
-$sql = "SELECT * FROM newsdetails";
+$sql = "SELECT * FROM newsdetails where newscategory= '$ID'";
 $result = $conobj->query($sql);
-			
+$row = mysqli_fetch_array($result);
+include("../control/newsUpdateCheck.php")
+
 ?>
+
 
 
 <!DOCTYPE HTML>
@@ -20,6 +26,7 @@ $result = $conobj->query($sql);
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<link rel="stylesheet" href="../css/officeInfo.css" />
+		<link rel="stylesheet" href="../css/newsdesign.css" />
 	</head>
 	<body>
 		<div>
@@ -58,42 +65,57 @@ $result = $conobj->query($sql);
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
-		
-						 <div id="table">
-							<table  class="table" border=1 cellspacing="0" align="center">
-							   <div class="table_head">
-								<thead class="table_head">
-									<th>News Catagory</th>
-									<th>News Headline</th>
-									<th>News Body</th>
-									<th>Writer Name</th>
-									<th>Action</th>
-									
-								</thead>
-								</div>
-								 <tbody class="table_loginbody">    
-									
-										<?php
-											if ($result->num_rows > 0) {
-								
-										while($row = $result->fetch_assoc()) {
-									  
-									 echo "<tr>";
-									echo "<td>$row[newscategory]</td> 
-										  <td>$row[newsheadline]</td>
-										  <td>$row[newsbody]</td>
-										  <td>$row[writerName]</td>
-										  <td id=action><a href=updateNews.php?catagory=$row[newscategory]>Update</a> <a href=../control/deleteNews.php?catagory=$row[newscategory]>Delete</a><br></td>";
-									echo "</tr>";
-									
-									}
-									
-										}
-										?>
-									
-								</tbody>
 							
-							</table>
+							<table align="center">
+								<tr>
+									<?php 
+										if($row['newscategory']=="Politics")
+										{
+											$option1 ="selected";
+										}
+										if($row['newscategory']=="Sports")
+										{
+											$option2 ="selected";
+										}
+										if($row['newscategory']=="Agriculture")
+										{
+											$option3 ="selected";
+										}
+										if($row['newscategory']=="Economics")
+										{
+											$option4 ="selected";
+										}
+										if($row['newscategory']=="International")
+										{
+											$option5 ="selected";
+										}
+										if($row['newscategory']=="Others")
+										{
+											$option6 ="selected";
+										}
+										echo  "<select name=catagory>
+										  <option value=  'Politics' $option1>Politics</option>
+										  <option value= 'Sports' $option2>Sports</option>
+										  <option value= 'Agriculture' $option3>Agriculture</option>
+										  <option value= 'Economics' $option4>Economics</option>
+										  <option value= 'International' $option5>International</option>
+										  <option value= 'Others' $option6>Others</option>
+										</select>  
+									</td> ";
+									?>
+								</tr>
+								  <td><input name="headline"  value="<?php echo $row['newsheadline']; ?>"></td> 
+								</tr>
+								<tr>
+								  <td ><input width="400px" height="400px" type="text" name="details" id="" value="<?php echo $row['newsbody']; ?>"></td> 
+								</tr>
+								<tr>
+								<td>
+								  <input type="submit" name="submit" value="Update" />
+								</td>
+								</tr>
+						</table>
+							
 						</td>
 					</tr>
 					<tr>
@@ -103,5 +125,3 @@ $result = $conobj->query($sql);
 			</center>
 	<form>	
 		</div>
-	</body>
-</html>

@@ -3,6 +3,8 @@
 //include ('../control/db.php');
 $error="";
 
+
+
 $name = $email = $phone =$dob ="";
 if(isset($_POST['submit'])){
 
@@ -15,17 +17,23 @@ if(isset($_POST['submit'])){
 		
 	}
 	else{
-		$catagory= $_POST['catagory'];
+
 		$headline= $_POST['headline'];
 		$details= $_POST['details'];
+		include('dashboardCheck.php');
 		
 		$conobj=$connection->OpenCon();
 
-		$sql = db::updateNewsInfo($conobj,$catagory, $headline, $details);
+		$sql = db::updateNewsInfo($conobj,$_POST['catagory'], $headline, $details,$name);
 		
 		
 		if ($sql === TRUE) {
 		header('Location:../view/newsInfo.php');
+		//echo $_POST['catagory'];
+		//echo $headline;
+		//echo $details;
+	
+		
 		} else {
 		echo "Error updating record: " ;
 		}

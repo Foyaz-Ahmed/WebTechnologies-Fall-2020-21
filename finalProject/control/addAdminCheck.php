@@ -1,7 +1,6 @@
 <?php
 include('db.php');
-//session_start(); 
-		  
+ 		  
  $error="";
  $matchPass="";
 if (isset($_POST['submit'])) {
