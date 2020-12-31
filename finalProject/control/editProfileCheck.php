@@ -25,7 +25,7 @@ $row = mysqli_fetch_array($sql);
 	  
 	  
 	  
-if(empty($_POST['mname']) || empty($_POST['memail']) ||  empty($_POST['gender']) || empty($_POST['mphone']) || empty($_POST['address']) || empty($_POST['date']))
+if(empty($_POST['mname']) || empty($_POST['memail']) ||  empty($_POST['gender']) || empty($_POST['mphone']) || empty($_POST['address']) || empty($_POST['bloodGroup']) || empty($_POST['jdate']) || empty($_POST['date']))
 	
 	{
 	 
@@ -47,13 +47,14 @@ else{
 		$name = $_POST['mname'];
 		$email = $_POST['memail'];
 		$address = $_POST['address'];
+		$joiningDate = $_POST['jdate'];
 		$phone = $_POST['mphone'];
 		$dob = $_POST['date'];
-		$sql = db::updateOwnProfile($conobj,$id,$name,$email, $_POST['gender'],$address,$phone,$dob);
+		$sql = db::updateOwnProfile($conobj,$id,$name,$email, $_POST['gender'],$address,$joiningDate,$phone,$_POST['bloodGroup'],$dob);
 		
 		
 		if ($sql === TRUE) {
-		echo "Record updated successfully";
+		header('Location:../view/profile.php');
 		} else {
 		echo "Error updating record: " ;
 		}

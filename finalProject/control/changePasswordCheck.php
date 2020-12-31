@@ -1,6 +1,5 @@
 <?php
 
- session_start();
  $pass =$cpass = $rpass = $message = "";
  $id = $_SESSION["userID"];
  $error="";

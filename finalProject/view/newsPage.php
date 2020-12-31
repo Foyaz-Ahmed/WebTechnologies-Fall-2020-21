@@ -13,6 +13,8 @@ include('../control/newsCheck.php');
 		<meta charset="UTF-8">
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
+		<link rel="stylesheet" href="../css/officeInfo.css" />
+		<link rel="stylesheet" href="../css/managedesign.css" />
 	</head>
 	<body>
 		<div>
@@ -33,7 +35,6 @@ include('../control/newsCheck.php');
 																						  }?></h1></b></b>
 							<hr>
 							<ul>
-								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
 								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
@@ -43,19 +44,23 @@ include('../control/newsCheck.php');
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor"){
+								<?php if($position=="News Editor" || $position=="Admin"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
+								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+								
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
 							
-							<table align="center">
+							<table align="center" class="news_design">
 								<tr>
 									<td>
-									<select name="catagory">
+									<select id="catagory_design" name="catagory">
 									  <option value="">-- select News Catagory --</option>
 									  <option value="Politics">Politics</option>
 									  <option value="Sports">Sports</option>
@@ -73,7 +78,7 @@ include('../control/newsCheck.php');
 								</tr>
 								<tr>
 								<td>
-								  <input type="submit" name="submit" value="Post News" />
+								  <input type="submit" name="submit" value="Post" />
 								  <b><?php echo $successMsg;?><b>
 								</td>
 								</tr>

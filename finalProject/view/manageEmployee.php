@@ -13,6 +13,8 @@ include('../control/dashboardCheck.php');
 		<meta charset="UTF-8">
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
+		<link rel="stylesheet" href="../css/officeInfo.css" />
+		<link rel="stylesheet" href="../css/managedesign.css" />
 	</head>
 	<body>
 		<div>
@@ -32,7 +34,6 @@ include('../control/dashboardCheck.php');
 																						  }?></h1></b></b>
 							<hr>
 							<ul>
-								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
 								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
@@ -42,22 +43,26 @@ include('../control/dashboardCheck.php');
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor"){
+								<?php if($position=="News Editor" || $position=="Admin"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
+								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+								
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
-								<table cellspacing="0" border="1" width="500px" height="500px" align="center">
+								<table class="manage" cellspacing="0" border="1" width="500px" height="500px" align="center">
 								<tr>	
 									<td height="400px" align="center">
-									<fieldset>
-									<a href="showOfficeInfo.php"><input type="button" name="button" value="Employee Details" /></a></br><br>
-									<a href="showInfo.php"><input type="button" name="button" value="Manage office Login Data"/></a>
-									<!-- <a href="../control/clearCookies.php"><button >Clear Cookies</button></a>  -->
-									</fieldset>
+									<div id="welcome_reader">Welcome to Office Employee Information</div>
+									<a href="showOfficeInfo.php"><button id="buttono">Employee Details</a></button></br><br>
+									<a href="showInfo.php"><button id="buttono">Employee Login Data</a></button></br><br>
+									<!--<a href="showOfficeInfo.php"><input type="button" name="button" value="Employee Details" /></a></br><br>
+									<a href="showInfo.php"><input type="button" name="button" value="Manage office Login Data"/></a>-->
 								   </td>
 								</tr>
 							</table

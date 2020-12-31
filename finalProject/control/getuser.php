@@ -3,12 +3,6 @@ include('db.php');
 
 $user = $_POST['uname'];
 
-
-if($user=="")
-{
-    echo "0 results";
-}
-
 $connection = new db();
 $conobj=$connection->OpenCon();
 

@@ -10,6 +10,7 @@
 		<meta charset="UTF-8">
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
+		<link rel="stylesheet" href="../css/officeInfo.css" />
 	</head>
 	<center>
 	<body background ="">
@@ -48,9 +49,9 @@
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
 								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
-								echo "<li><a href=../control/logout.php><h3>Search Reader by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor"){
+								<?php if($position=="News Editor" || $position=="Admin"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
 								

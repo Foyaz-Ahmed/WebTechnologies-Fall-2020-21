@@ -1,0 +1,53 @@
+input{
+	background:#15C39A;
+	width:200px;
+	font-size:15px;
+	font-weight:bold;
+	margin:0;
+	height:20px;
+	color:#ffff;
+}
+.manage{
+	text-align:center;
+	margin-left:300px;
+	background:#E8E8FF;
+}
+input:hover{
+	background:#851313;
+}
+#buttono a{
+	color:white;
+	text-decoration:none;
+}
+#buttono{
+	background:#15C39A;
+	width:200px;
+	font-size:15px;
+	font-weight:bold;
+	margin:0;
+	height:40px;
+	color:#ffff;
+}
+#buttono:hover{
+	background:#851313;
+	
+}
+#welcome_reader{
+	font-size:20px;
+	margin-bottom:10px;
+	font-style:italic;
+	color:red;
+	font-weight:bold;
+}
+.news_design{
+	
+	margin-left:250px;
+	background:#35363A;
+}
+#catagory_design{
+	background:red;
+}
+.headline_design{
+	background:#F0F0F0;
+	color:blue;
+}

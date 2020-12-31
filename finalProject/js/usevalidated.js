@@ -98,11 +98,7 @@ function validateForm()
 		}
 		
 	}
- /* if(file="")
-  {
-	  alert("No file  Chosen");
-  }
- */
+	
   if(date=="")
   {
 	  alert("give your date of birth");

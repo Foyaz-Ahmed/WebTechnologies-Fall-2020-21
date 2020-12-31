@@ -2,11 +2,12 @@
 $radio1="";
 $radio2="";
 $radio3="";
+$option1 = $option2 = $option3 = $option4 = $option5 = $option6 =""; 
 session_start();
-include('../control/dashboardcheck.php');
 //include('../control/registeValidation.php');
 //include('../control/officeJournalistValidation.php');
 include('../control/editProfileValidation.php');
+include('../control/dashboardCheck.php');
 include('../control/editProfileCheck.php');
 
 //echo $row['gender'];
@@ -19,6 +20,8 @@ include('../control/editProfileCheck.php');
 		<meta charset="UTF-8">
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
+		<link rel="stylesheet" href="../css/profiledesign.css" />
+		<link rel="stylesheet" href="../css/officeInfo.css" />
 	</head>
 	<body>
 	<center>
@@ -34,10 +37,11 @@ include('../control/editProfileCheck.php');
 						</td>
 					</tr>
 					</tr>
-						<td  class="side_content" height ="400"><b align="left"><h1>Account</h1></b>
+						<td class="side_content" height ="400"><b align="left"><h1>Account-<?php if(isset($_COOKIE["userId"])){
+						                                                                  echo $_COOKIE["userId"];
+																						  }?></h1></b></b>
 							<hr>
 							<ul>
-								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
 								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
@@ -47,17 +51,21 @@ include('../control/editProfileCheck.php');
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor"){
+								<?php if($position=="News Editor" || $position=="Admin"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
+								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+								
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
 							<fieldset>	
 								<legend><h5>Edit Profile</h5></legend>
-								<table align="center">
+								<table class="profile_wrap" align="center">
 									<tr>
 										<td>Name:</td>
 										<td></td>
@@ -75,6 +83,7 @@ include('../control/editProfileCheck.php');
 									<tr><td colspan="3"><hr></td></tr>
 									<tr>
 										<td>Gender:</td>
+										<td></td>
 										<td>
 										<?php 
 
@@ -91,9 +100,9 @@ include('../control/editProfileCheck.php');
 										  }
 										
 										
-									echo 	"<input type='radio' value='male' name='gender' $radio1/>Male</td>
-										<td><input type='radio' value='female' name='gender' $radio2 />Female</td>
-										<td><input type='radio' value='others' name='gender' $radio3 />Others</td>
+									echo 	"<input type='radio' value='male' name='gender' $radio1/>Male
+										     <input type='radio' value='female' name='gender' $radio2 />Female
+										     <input type='radio' value='others' name='gender' $radio3 />Others</td>
 										<td></td>";
 										?>
 									</tr>
@@ -104,6 +113,52 @@ include('../control/editProfileCheck.php');
 										<td><input type ="text" name="address" method ="post"  value="<?php echo $row['address'];?>"></td>
 										<td><?php echo $addressError;?></td>
 									</tr>
+									<tr>
+									<td>Joining  Date</td>
+									<td></td>
+									<td><input type="date"  name="jdate" value="<?php echo $row['joiningDate']?>"/></td>
+									</tr>
+									<tr>
+									<td>Blood Group</td>
+									<td></td>
+									<td>
+									<?php 
+										if($row['bloodGroup']=="A poitive")
+										{
+											$option1 ="selected";
+										}
+										if($row['bloodGroup']=="A Negetive")
+										{
+											$option2 ="selected";
+										}
+										if($row['bloodGroup']=="B poitive")
+										{
+											$option3 ="selected";
+										}
+										if($row['bloodGroup']=="B negetive")
+										{
+											$option4 ="selected";
+										}
+										if($row['bloodGroup']=="O positive")
+										{
+											$option5 ="selected";
+										}
+										if($row['bloodGroup']=="O Negetive")
+										{
+											$option6 ="selected";
+										}
+										echo  "<select name=bloodGroup>
+										  <option value=  'A positive' $option1>A+</option>
+										  <option value= 'A Negetive' $option2>A-</option>
+										  <option value= 'B positive' $option3>B+</option>
+										  <option value= 'B negetive' $option4>B-</option>
+										  <option value= 'O positive' $option5>O+</option>
+										  <option value= 'O Negetive' $option6>O-</option>
+										</select>  
+									</td> ";
+									?>
+								</tr>
+									
 									<tr><td colspan="4"><hr></td></tr>
 									<tr>
 										<td>Phone Number:</td>
@@ -123,7 +178,6 @@ include('../control/editProfileCheck.php');
 									<tr>
 										<td><input type ="submit" value ="Update" name="submit"></td>
 										<td></td>
-										<td><input type ="reset"  value ="Reset"></td>
 										<td><b><?php echo $Error;?><b></td>
 									</tr>
 									
