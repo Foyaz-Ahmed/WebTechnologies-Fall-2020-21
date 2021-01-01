@@ -25,6 +25,7 @@ $error = "Fill up All the Field For Successfull Registration";
 		 $myGender = $_POST["gender"];
 		 $bGroup = $_POST["bloodgroup"];
 		 $dob = $_POST["date"];
+		 $image = $_FILES['image']['name'];
 		 
 		 if($pass === $cPass)
 		 {		 
@@ -45,7 +46,7 @@ $error = "Fill up All the Field For Successfull Registration";
 		$conobj=$connection->OpenCon();
 
 
-		$qrr =  db::InfoTable($conobj,$userId,$name,$email,$myGender,$address,$jdate, $phone, $bGroup,$dob);
+		$qrr =  db::InfoTable($conobj,$userId,$name,$email,$myGender,$address,$jdate, $phone, $bGroup,$dob,$image);
 		$sll =  db::insertloginTableJournalist($conobj,$userId, $pass, "News Editor");
 		
 		

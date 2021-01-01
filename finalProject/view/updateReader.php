@@ -16,9 +16,7 @@ $sql = "SELECT * FROM readerregistrationinfo where userId = '" . $ID."'";
 $result = $conobj->query($sql);
 $row = mysqli_fetch_array($result);	
 $connection->CloseCon($conobj);
-		  
-
- include('../control/updateReaderCheck.php');
+include('../control/updateReaderCheck.php');
 ?>
 
 
@@ -73,15 +71,16 @@ $connection->CloseCon($conobj);
 							<form method ="post" action="">
 							  <table height="30px" width="600px">
 								<tr>
-									<th>Name:<input type="text" name="name" value="<?php echo $row['name'] ;?>"></th></tr>
-								    <tr><th>Email:<input type="text" name="email" value="<?php echo $row['email'] ;?>"></th></tr>
-									<tr><th>Phone:<input type="text" name="phone" value="<?php echo $row['phone'] ;?>"></th></tr>
-									<tr><th>DOB:<input type="text" name="dob" value="<?php echo $row['dob'] ;?>"></th></tr>
+									<th>Name:<input type="text" name="name" value="<?php echo $row['name'] ;?>"><br><br></th></tr>
+								    <tr><th>Email:<input type="text" name="email" value="<?php echo $row['email'] ;?>"><br><br></th></tr>
+									<tr><th>Phone:<input type="text" name="phone" value="<?php echo $row['phone'] ;?>"><br><br></th></tr>
+									<tr><th>DOB:<input type="text" name="dob" value="<?php echo $row['dob'] ;?>"><br><br></th></tr>
+									<tr><th><input type="submit" name="submit" value="Update"  /></th></tr>
 								</tr>
 								<tr>
 									
-									<td><input type="submit" name="submit" value="Update"  /></td>
-									<td><?php echo  $error;?></td>
+									<td><?php echo "<b> $error; </b>"?></td>
+									<td></td>
 								</tr>
 							  </table>
 							  </form>

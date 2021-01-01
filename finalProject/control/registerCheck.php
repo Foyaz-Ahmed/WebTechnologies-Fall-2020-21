@@ -24,6 +24,7 @@ $error = "Fill up All the Field For Successfull Registration";
 		 $bGroup = $_POST["bloodgroup"];
 		 $dob = $_POST["date"];
 		 
+		 
 		 if($pass === $cPass)
 		 {		 
 
@@ -44,6 +45,7 @@ $error = "Fill up All the Field For Successfull Registration";
 		 $qry =  db::UserInfoTable($conobj,$userId,$name,$email, $myGender, $phone, $bGroup,$dob);
 		
 		 $sl =  db::insertReader($conobj,$userId, $pass, "Reader");
+		 
 		  
 		 $res =$conobj->query($qry);
 		

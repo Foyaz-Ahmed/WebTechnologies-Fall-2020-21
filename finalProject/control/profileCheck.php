@@ -1,8 +1,5 @@
  <?php
 
-session_start();
-
-$id = $_SESSION["userID"];
 $position = $_SESSION["Position"];
 $error="";
 //echo $position;
@@ -35,6 +32,8 @@ if($position == "Admin" || $position == "News Editor" || $position =="Journalist
          $phone = $row['phone'];
          $bloodGroup = $row['bloodGroup'];
          $dob = $row['dob'];
+		// echo "<img src='../profileimage/".$row['image']."' >";
+	//	 $image = "<img src='images/".$row['image'].";
 		
       }  
     }

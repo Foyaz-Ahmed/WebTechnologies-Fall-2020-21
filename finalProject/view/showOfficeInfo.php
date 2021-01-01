@@ -20,6 +20,7 @@ $result = $conobj->query($sql);
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<link rel="stylesheet" href="../css/officeInfo.css" />
+		<link rel="stylesheet" href="../css/managedesign.css" />
 	</head>
 	<body>
 		<div>
@@ -42,7 +43,6 @@ $result = $conobj->query($sql);
 							<ul>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
-								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
 								<li><a href="changePassword.php"><h3>Change Password</h3></a></li>
 								<?php if($position=="Admin"){
 								echo "<li><a href= manageEmployee.php><h3>Manage Employee</h3></a></li>";
@@ -50,9 +50,9 @@ $result = $conobj->query($sql);
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
 								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
-								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor" || $position=="Admin"){
+								<?php if($position=="News Editor"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
 								
@@ -61,8 +61,11 @@ $result = $conobj->query($sql);
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
-						<a href="addType.php"> <input type="button" id="button" align="center" value="Add Employee"></a><br><br>
-		
+						<center>
+						<h1>Employee Information</h1>
+						<!--<a href="addType.php"> <input type="button" id="button" align="center" value="Add Employee"></a><br><br>-->
+						<button id="buttono"><a href="addType.php">Add Employee</a></button>
+						</center>
 						 <div id="table">
 							<table  class="table" border=1 cellspacing="0" align="center">
 							   <div class="table_head">

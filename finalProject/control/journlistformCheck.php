@@ -26,6 +26,9 @@ $error = "Fill up All the Field For Successfull Registration";
 		 $bGroup = $_POST["bloodgroup"];
 		 $dob = $_POST["date"];
 		 
+		
+
+		 
 		 if($pass === $cPass)
 		 {		 
 
@@ -45,7 +48,7 @@ $error = "Fill up All the Field For Successfull Registration";
 		$conobj=$connection->OpenCon();
 
 
-		$qrr = db::InfoTable($conobj,$userId,$name,$email,$myGender,$address,$jdate, $phone, $bGroup,$dob);
+		$qrr = db::InfoTable($conobj,$userId,$name,$email,$myGender,$address,$jdate, $phone, $bGroup,$dob,$image);
 		$sll =  db::insertloginTableJournalist($conobj,$userId, $pass, "Journalist");
 		
 		

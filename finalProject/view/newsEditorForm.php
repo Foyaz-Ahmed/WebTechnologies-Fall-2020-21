@@ -111,7 +111,7 @@
 				<tr>
 					<td>Choose Profile Picture:</td>
 					<td></td>
-					<td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+					<td><input type="file" name="image"></td>
 					<td><?php echo $fileError; ?></td>
 					
 				</tr>

@@ -42,14 +42,14 @@ $stmt->close();
 return $flag;
  }
  
-function InfoTable($conn,$userId, $name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob)
+function InfoTable($conn,$userId, $name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob,$image)
  
  {
 	$flag=1;
-	$stmt = $conn->prepare("INSERT INTO officeinfo (userId, name, email, gender,address, joiningDate,phone,bloodGroup,dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$stmt = $conn->prepare("INSERT INTO officeinfo (userId, name, email, gender,address, joiningDate,phone,bloodGroup,dob,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 
-	$stmt->bind_param("sssssssss", $userId, $name, $email, $gender, $address, $joiningDate, $phone, $bloodGroup,$dob);
+	$stmt->bind_param("ssssssssss", $userId, $name, $email, $gender, $address, $joiningDate, $phone, $bloodGroup,$dob,$image);
 
 	$stmt->execute();
 	$stmt->close();

@@ -6,26 +6,27 @@ $error="";
 $name = $email = $phone =$dob ="";
 if(isset($_POST['submit'])){
 
-	if(empty($_POST['catagory']) || empty($_POST['headline']) || empty($_POST['details'])){
+	if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['dob'])){
 		
 		
 		$error = "Empty Field";
-		echo $error;
 		
 		
 	}
 	else{
-		$catagory= $_POST['catagory'];
-		$headline= $_POST['headline'];
-		$details= $_POST['details'];
+		$name= $_POST['name'];
+		$email= $_POST['email'];
+		$phone= $_POST['phone'];
+		$dob= $_POST['dob'];
+		$connection = new db();
 		
 		$conobj=$connection->OpenCon();
 
-		$sql = db::updateNewsInfo($conobj,$catagory, $headline, $details);
+		$sql = db::updateReaderInfo($conobj,$ID, $name, $email, $phone, $dob);
 		
 		
 		if ($sql === TRUE) {
-		header('Location:../view/newsInfo.php');
+		 header('Location:../view/showReaderInfo.php');
 		} else {
 		echo "Error updating record: " ;
 		}

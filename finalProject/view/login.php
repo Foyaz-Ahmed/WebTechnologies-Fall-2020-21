@@ -15,23 +15,24 @@ header("location: dashboard.php");
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" href="../css/log.css" />
+	<script type="text/javascript" src="../js/logvalidated.js"></script>
 </head>
 
 <body>
 	<br><br>
 	<div class="login_page">
 		<div class="form">
-			<form action="" method="post" class="loginform">
+			<form action="" method="post" class="loginform" onsubmit="logvalidateForm()">
 				<img class="picture" src="../images/login.jpg" alt="loginpicture" />
 				<h2>Login</h2>
-				<input  type="text" name="userID" placeholder="user Id" /><br>
-				<input type="password"  name="password" placeholder="password" />
+				<input  type="text" name="userID" placeholder="user Id" id="id"/><br>
+				<input type="password"  name="password" placeholder="password" id="password" />
 				<div class="typedesign">
 				<label for="gender"><h3>Type:<h3></label>
-				<input id="radio" type="radio" name="Position" value="Admin"/><b>Admin</b>
-				<input id="radio" type="radio" name="Position" value ="News Editor"/><b>News Editor</b>
-				<input  id="radio" type="radio" name="Position" value="Journalist"/><b>Journalist</b>
-				<input  id="radio" type="radio" name="Position" value="Reader"/><b>Reader</b><br>
+				<input  type="radio" name="Position" id="admin" value="Admin"/><b>Admin</b>
+				<input  type="radio" name="Position" id="newseditor" value ="News Editor"/><b>News Editor</b>
+				<input   type="radio" name="Position" id="journalist" value="Journalist"/><b>Journalist</b>
+				<input   type="radio" name="Position" id ="reader" value="Reader"/><b>Reader</b><br>
 			</div>
 			<?php echo $error;?>;
 			<hr>

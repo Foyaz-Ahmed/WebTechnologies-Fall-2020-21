@@ -38,25 +38,27 @@ include('../control/dashboardCheck.php');
 																						  }?></h1></b></b>
 							<hr>
 							<ul>
-								<li><a href="dashboard.php"><h3>Dashboard</h3></a></li>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
-								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
 								<li><a href="changePassword.php"><h3>Change Password</h3></a></li>
 								<?php if($position=="Admin"){
 								echo "<li><a href= manageEmployee.php><h3>Manage Employee</h3></a></li>";
 								}?>
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
+								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader</h3></a></li>";
 								}?>
 								<?php if($position=="News Editor"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
+								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
+								
 							</ul>
 						</td>
 						<td width ="1200px" height ="700px">
-								<form action="" method="post" enctype="multipart/form-data">
+			<center>					<form action="" method="post" enctype="multipart/form-data">
 		<fieldset>	
 			<legend><h5>Insert Admin:</h5></legend>
 			<table align="center" class="wholeadd_table">
@@ -144,6 +146,9 @@ include('../control/dashboardCheck.php');
 					<td><input type="tel" name="mphone"></td>
 					<td><?php echo $noError;?></td>
 				</tr>
+				<tr>
+				
+				</tr>
 				<tr><td colspan="4"><hr></td></tr>
 				<tr>
 					<td>Date Of Birth:</td>
@@ -159,7 +164,7 @@ include('../control/dashboardCheck.php');
 				</tr>
 				
 			</table>
-	
+			</center>
 				</fieldset>	
 				</form>
 				 <?php echo $error; ?>

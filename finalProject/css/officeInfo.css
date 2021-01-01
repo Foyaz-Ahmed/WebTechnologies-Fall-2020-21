@@ -4,7 +4,7 @@
 }
 h1{
 	color:red;
-	font-size:15px;
+	font-size:25px;
 	
 	
 }
@@ -102,4 +102,8 @@ h1{
 }
 .table_update{
 	background:#EDEDED;
+}
+h4{
+	color:#20343F;
+	font-size:15px;
 }

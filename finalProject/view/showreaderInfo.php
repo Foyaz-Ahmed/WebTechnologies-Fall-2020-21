@@ -20,6 +20,7 @@ $connection->CloseCon($conobj);
 		<title>News Portal Management System</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<link rel="stylesheet" href="../css/officeInfo.css" />
+		<link rel="stylesheet" href="../css/managedesign.css" />
 	</head>
 	<body>
 		<div>
@@ -42,7 +43,6 @@ $connection->CloseCon($conobj);
 							<ul>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
-								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
 								<li><a href="changePassword.php"><h3>Change Password</h3></a></li>
 								<?php if($position=="Admin"){
 								echo "<li><a href= manageEmployee.php><h3>Manage Employee</h3></a></li>";
@@ -50,9 +50,9 @@ $connection->CloseCon($conobj);
 								<?php if($position=== "Admin" || $position=="Journalist"){
 								echo "<li><a href= manageReader.php><h3>Manage Reader</h3></a></li>";
 								echo "<li><a href= searchEmployee.php><h3>Search Employee by Name</h3></a></li>";
-								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader</h3></a></li>";
 								}?>
-								<?php if($position=="News Editor" || $position=="Admin"){
+								<?php if($position=="News Editor"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
 								}?>
 								
@@ -63,8 +63,8 @@ $connection->CloseCon($conobj);
 						<td width ="1200px" height ="700px">	
 						 <div id="table">
 						 <center>
-							<h2>Reader Information</h2>
-						   <a href="addReader.php"><input type="button" value="Add Reader"></a><br><br>
+							<h1>Reader Information</h1>
+						   <button id="buttono"><a href="addReader.php">Add Reader</a></button><br><br>
 							<table border=1 cellspacing="0">
 								<thead class="table_head">
 									<th>UserId</th>

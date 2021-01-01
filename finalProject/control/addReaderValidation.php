@@ -162,16 +162,6 @@
 			$dobError = "Seclect the Date of Birth";
 		}
 		
-		$target_dir = "../profileimage/";
-		$target_file = $target_dir . basename($_FILES["image"]["name"]);
-
-		if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
-		}
-		else{
-			$fileError= "Empty field or there was an error uploading your file.";
-			}
-
 		
 		}
 		

@@ -49,6 +49,7 @@ include('../control/dashboardCheck.php');
 								}?>
 								<?php if($position=="News Editor" || $position=="Admin"){
 								echo "<li><a href= manageNews.php><h3>Manage News </h3></a></li>";
+								echo "<li><a href= searchReader.php><h3>Search Reader by Name</h3></a></li>";
 								}?>
 								
 								<li><a href="../control/logout.php"><h3>Logout</h3></a></li>
