@@ -7,18 +7,18 @@ header("Location: registr.php");
 }
 
 
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="../css/successdesign.css" />
+</head>
 <body>
 
 
 <center>
-	<table>
+	<table class="successfullform">
 	 <tr>
 	   <td>
 		 <fieldset>

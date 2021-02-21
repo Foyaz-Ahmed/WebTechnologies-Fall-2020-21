@@ -20,6 +20,21 @@ h1{
 	color:#DA1F26;
 	font-size:25px;
 	
-	
-	
+}
+
+#buttonsearch{
+	width:70px;
+	background:#FD6161;
+	height:25px;
+	border-radius:5px;
+}
+#search{
+	width:150px;
+	height:20px;
+	background:#5DADE2;
+}
+#uname{
+	width:150px;
+	height:20px;
+	background:#5DADE2;
 }

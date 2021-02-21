@@ -31,7 +31,7 @@ function logvalidateForm(){
      return false;  
 	 }
 	
-	if (document.getElementById("admin").checked == false &&  document.getElementById("newseditor").checked == false && document.getElementById("journalist").checked == false && document.getElementById("reader").checked == false)
+ if (document.getElementById("admin").checked == false &&  document.getElementById("newseditor").checked == false && document.getElementById("journalist").checked == false && document.getElementById("reader").checked == false)
   {
     alert("Select Usertype");
     return false;

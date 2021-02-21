@@ -216,6 +216,12 @@ $result = $conn->query("SELECT * FROM  $table WHERE phone='$phone'");
 $result = $conn->query("SELECT * FROM  $table WHERE email='$email'");
  return $result;
  }
+ function sportsNews($conn,$table, $catagory)
+ {
+	 
+$result = $conn->query("SELECT * FROM  $table WHERE newscategory ='$catagory'");
+ return $result;
+ }
  
  function CloseCon($conn)
  {

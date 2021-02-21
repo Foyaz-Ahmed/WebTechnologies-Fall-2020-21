@@ -18,20 +18,18 @@ include('menubar.php');
 					<a href="#">Bangladesh</a>
 					<a href="#">Politics</a>
 					<a href="#">International</a>
-					<a href="#">Sport</a>
+					<a href="sportNews.php">Sport</a>
 					<a href="#">Entertainment</a>
 					<a href="#">Economy</a>
 					<a href="#">Life & Style</a>
 					<a href="#">Others</a>
-					<b>Search</b>
-					<input type="text">
 				</h3>	
 			</div>
 		</nav>
 		<div>
 			<table border="1" cellspacing="0">
 				<tr>
-					<th colspan ="3"><h2>Headlines: The New President of USA is Baiden.</h2>
+					<th id="headline" colspan ="3"><h2>Headlines: 1.The New President of USA is Baiden. 2.Economic growth of Bangladesh is 1.2% 3.Shakib al hasan is the best.</h2>
 					</th>
 					
 				</tr>

@@ -87,9 +87,10 @@ include('../control/dashboardCheck.php');
 										<td colspan="3"><hr></td>
 									</tr>
 										<td><?php
+										echo "<b>$err</b>";
 										if(isset($message)){
 										echo "<b>$message<b>";
-										echo "<b>$error</b>";
+										
 										echo "<b>$passError</b>";
 										}
 										?></td>

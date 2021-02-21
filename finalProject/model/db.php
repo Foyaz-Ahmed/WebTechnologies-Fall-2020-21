@@ -13,7 +13,7 @@ function OpenCon()
  }
 
  
-  function CheckOfficeUser($conn,$table, $userId, $password, $position)
+ function CheckOfficeUser($conn,$table, $userId, $password, $position)
  {
 $sql = $conn->query("SELECT * FROM ". $table." WHERE userid ='". $userId."' AND password='". $password."' AND  position ='". $position."'");
  return $sql;
@@ -26,7 +26,7 @@ $sql = $conn->query("SELECT * FROM ". $table." WHERE userid ='". $userId."' AND 
  }
  
  
- function UserInfoTable($conn, $userId,$name,$email,$gender,$phone,$bloodGroup,$dob)
+function UserInfoTable($conn, $userId,$name,$email,$gender,$phone,$bloodGroup,$dob)
  
 {
 $flag=1;
@@ -42,14 +42,14 @@ $stmt->close();
 return $flag;
  }
  
-  function InfoTable($conn,$userId, $name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob)
+function InfoTable($conn,$userId, $name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob,$image)
  
  {
 	$flag=1;
-	$stmt = $conn->prepare("INSERT INTO officeinfo (userId, name, email, gender,address, joiningDate,phone,bloodGroup,dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$stmt = $conn->prepare("INSERT INTO officeinfo (userId, name, email, gender,address, joiningDate,phone,bloodGroup,dob,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 
-	$stmt->bind_param("sssssssss", $userId, $name, $email, $gender, $address, $joiningDate, $phone, $bloodGroup,$dob);
+	$stmt->bind_param("ssssssssss", $userId, $name, $email, $gender, $address, $joiningDate, $phone, $bloodGroup,$dob,$image);
 
 	$stmt->execute();
 	$stmt->close();
@@ -120,10 +120,10 @@ return $flag;
 	 $result = $conn->query("SELECT * from officeinfo WHERE userId='" . $id."'");
 	 return $result;
  }
- function updateOwnProfile($conn,$id,$name,$email,$gender,$address,$phone,$dob)
+ function updateOwnProfile($conn,$id,$name,$email,$gender,$address,$joiningDate,$phone,$bloodGroup,$dob)
  
  {
-	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',gender='". $gender."',address='". $address."', phone='". $phone."',dob='". $dob."' WHERE userId='". $id ."'"); 
+	$sql = $conn->query( "UPDATE officeinfo set name='". $name."', email='". $email."',gender='". $gender."',address='". $address."', joiningDate='". $joiningDate."', phone='". $phone."', bloodGroup='". $bloodGroup."',dob='". $dob."' WHERE userId='". $id ."'"); 
 	return $sql;
  }
  function OfficeProfileEdit($conn, $ID)
@@ -164,6 +164,56 @@ return $flag;
  function GetUserByUname($conn,$table, $uname)
  {
 $result = $conn->query("SELECT * FROM  $table WHERE name='$uname'");
+ return $result;
+ }
+ 
+function postNews($conn,$catagory, $headline, $details, $name)
+ 
+ {
+	$flag=1;
+	$stmt = $conn->prepare("INSERT INTO newsdetails (newscategory,newsheadline,newsbody,writername) VALUES (?, ?, ?, ?)");
+
+
+	$stmt->bind_param("ssss", $catagory, $headline, $details, $name);
+
+	$stmt->execute();
+	$stmt->close();
+
+	return $flag;
+ }
+ 
+ function updateNewsInfo($conn,$catagory,$headline,$details,$name)
+ 
+ {
+	$sql = $conn->query( "UPDATE newsdetails set newscategory='". $catagory."', newsheadline='". $headline."',newsbody='". $details."' WHERE writerName='". $name."'"); 
+	return $sql;
+ }
+ 
+ function  deleteNewsInfo($conn,$id)
+ 
+ {
+	 $sql = $conn->query("DELETE FROM newsdetails WHERE newscategory = '".$id."'");
+	 return $sql;
+
+ }
+ function GetUserById($conn,$table, $uname)
+ {
+$result = $conn->query("SELECT * FROM  $table WHERE userId='$uname'");
+ return $result;
+ }
+ function GetUserByName($conn,$table, $name)
+ {
+$result = $conn->query("SELECT * FROM  $table WHERE name='$name'");
+ return $result;
+ }
+ function GetUserByPhone($conn,$table, $phone)
+ {
+$result = $conn->query("SELECT * FROM  $table WHERE phone='$phone'");
+ return $result;
+ }
+ function GetUserByEmail($conn,$table, $email)
+ {
+$result = $conn->query("SELECT * FROM  $table WHERE email='$email'");
  return $result;
  }
  

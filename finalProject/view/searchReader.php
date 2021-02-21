@@ -228,7 +228,7 @@ include('../control/dashboardCheck.php');
 							<table class="searchr_wrap">
 							<tr>
 								<td>
-							<input type="text" name="search" id="search" ><button onclick="showmyuser()">Search</button><br><br><br>
+							<input type="text" name="search" id="search" ><button id="buttonsearch" onclick="showmyuser()">Search</button><br><br><br>
 	
 							<input type ="radio" name ="gender" value ="id" id="id">Search by ID
 							<input type ="radio" name ="gender" value ="name" id="name">Search by Name

@@ -2,11 +2,13 @@
 	background:black;
 	color:orange;
 	margin-top:20px;
+	width:100%
 }
 .navbar_design  a{
 	color:orange;
 	padding:10px 20px;
 	text-decoration:none;
+	text-align:center;
 	
 }
 .navbar_design a:hover{
@@ -14,4 +16,12 @@
 }
 input{
 	height:20px;
+}
+
+h3{
+	text-align:center;
+}
+h2{
+	text-align:left;
+	color:red;
 }

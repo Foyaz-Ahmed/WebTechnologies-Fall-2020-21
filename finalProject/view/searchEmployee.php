@@ -71,7 +71,7 @@ $position = $_SESSION['Position'];
 							<ul>
 								<li><a href="profile.php"><h3>View Profile</h3></a></li>
 								<li><a href="editProfile.php"><h3>Edit Profile</h3></a></li>
-								<li><a href="changeProfilePicture.php"><h3>Change Profile  Picture</h3></a></li>
+								
 								<li><a href="changePassword.php"><h3>Change Password</h3></a></li>
 								<?php if($position=="Admin"){
 								echo "<li><a href= manageEmployee.php><h3>Manage Employee</h3></a></li>";
@@ -96,7 +96,7 @@ $position = $_SESSION['Position'];
 									<tr>
 										<td>Search:</td>
 										<td><input type ="text" id="uname" method ="post" ></td>
-										<td><button onclick="showmyuser()">Search</button></td>
+										<td><button id="buttonsearch" onclick="showmyuser()">Search</button></td>
 									<tr>
 										<td colspan="3"><hr></td>
 			
